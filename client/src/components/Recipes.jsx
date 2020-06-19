@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom';
 
 export default class Recipes extends Component {
     constructor() {
         super();
 
         this.state = {
-            recipes: []
+            recipes: [],
         }
     }
 
@@ -27,8 +28,8 @@ export default class Recipes extends Component {
                 {this.state.recipes.map(recipe => {
                     return (
                         <div>
+
                             <h1>{recipe.name}</h1>
-                            <pre>{JSON.stringify(recipe, null, '\n')}</pre>
                         </div>
                     )
                 }
