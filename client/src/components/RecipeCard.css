@@ -1,0 +1,27 @@
+.RecipeCard {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.title {
+    background-color: black;
+    color: white;
+
+}
+.Card {
+    width: 50%;
+    border: black 1px solid;
+
+}
+
+.Review {
+    /* display: flex; */
+    flex-direction: row;
+}
+
+
+/* h2 {
+    background-color: black;
+    color: white;
+} */

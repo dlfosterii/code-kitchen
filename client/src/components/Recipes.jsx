@@ -17,7 +17,9 @@ export default class Recipes extends Component {
                 this.setState({
                     recipes: data
                 })
+                console.log(data)
             })
+            
     }
 
 
@@ -27,8 +29,9 @@ export default class Recipes extends Component {
             <div>
                 {this.state.recipes.map(recipe => {
                     return (
+                        // console.log(this.state)
                         <div>
-
+                        
                             <h1>{recipe.name}</h1>
                         </div>
                     )
