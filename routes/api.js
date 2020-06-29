@@ -76,13 +76,24 @@ router.delete('/recipes/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(number => {
-    if (number > 0) {
-      res.status(204).json({});
-    } else {
-      res.json({error: `could not find recipie with id: ${this.req.params.id}`})
-    }
-  })
+    .then(number => {
+      if (number > 0) {
+        res.status(204).json({});
+      } else {
+        res.json({ error: `could not find recipie with id: ${this.req.params.id}` })
+      }
+    })
+})
+
+router.post('/recipes/:id/likes', (req, res) => {
+  db.Recipes.findByPk(req.params.id)
+    .then(recipe => {
+      recipe.likes++
+      return recipe.save()
+    })
+    .then(recipe => {
+      res.json(recipe.likes)
+    })
 })
 
 module.exports = router;

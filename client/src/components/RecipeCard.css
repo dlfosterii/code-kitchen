@@ -1,27 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+
 .RecipeCard {
     display: flex;
     justify-content: center;
     padding-top: 5px;
+    height: 33vh;
 }
 
 .title {
     background-color: black;
     color: white;
+    margin: 0px;
 
 }
+
+.cardHeader {
+    height: 20%;
+}
+
 .Card {
     width: 50%;
     border: black 1px solid;
 
 }
 
-.Review {
-    /* display: flex; */
+.content {
+    display: flex;
     flex-direction: row;
+    margin-top: 25px;
+    height: 70%;
+
 }
 
+.description, .review {
+    text-align: left;
+    padding-left: 5px;
+    width: 50%;
+    height: 80%;
+}
 
-/* h2 {
-    background-color: black;
-    color: white;
-} */
+.review {
+    border-left: 2px dashed black;
+}
+
+h4 {
+    margin: 0px;
+}
+

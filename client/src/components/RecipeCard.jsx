@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './RecipeCard.css';
+import LikesButton from './LikesButton';
 
 export default class RecipeCard extends Component {
     constructor(props) {
@@ -26,6 +28,7 @@ export default class RecipeCard extends Component {
 
     }
 
+
     render() {
         const { loading, details } = this.state;
 
@@ -35,14 +38,25 @@ export default class RecipeCard extends Component {
 
         return (<div className="RecipeCard" >
             <div className="Card">
-            <div className="title">
-            <h1> {details.name}</h1>
-            </div>
-            <h4>URL: {details.url}</h4>
-            <div className="review">
-            <h4>Description: {details.description}</h4>
-            <h4>Review: {details.review}</h4>
-            </div>
+                <div className="cardHeader">
+                    <h1 className="title"> {details.name}</h1>
+                    <h4 className="url">URL: <a href={details.url}>{details.url}</a></h4>
+                </div>
+
+                <div className="content">
+                    <div className="description">
+                        <h4>Description:</h4>
+                        {details.description}
+                    </div>
+                    <div className="review">
+                        <h4>Review: </h4>
+                        {details.review}
+                    </div>
+                </div>
+                <footer className="footer">
+                    <LikesButton id={details.id} />
+                    <Link to="/">Home</Link>
+                </footer>
             </div>
 
         </div>

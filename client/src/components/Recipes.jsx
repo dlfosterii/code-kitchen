@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Recipes.css';
+import './InputForm';
+import InputForm from './InputForm';
 
 export default class Recipes extends Component {
     constructor() {
@@ -19,7 +22,7 @@ export default class Recipes extends Component {
                 })
                 console.log(data)
             })
-            
+
     }
 
 
@@ -30,9 +33,8 @@ export default class Recipes extends Component {
                 {this.state.recipes.map(recipe => {
                     return (
                         // console.log(this.state)
-                        <div>
-                        
-                            <h1>{recipe.name}</h1>
+                        <div key={recipe.id}>
+                            <Link to={`/recipes/${recipe.id}`}><h2>{recipe.name}</h2></Link>
                         </div>
                     )
                 }
